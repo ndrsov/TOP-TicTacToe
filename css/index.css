@@ -78,6 +78,8 @@ body {
   }
 }
 
+/* Main elements  */
+
 .turn {
   background-color: var(--gray);
   grid-column-start: 1;
