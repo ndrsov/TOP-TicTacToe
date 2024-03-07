@@ -124,15 +124,15 @@ body {
   }
 }
 
+.menu {
+  background-color: var(--gray);
+}
+
 .square {
   background-color: var(--gray);
 }
 
 .score {
-  background-color: var(--gray);
-}
-
-.actions {
   background-color: var(--gray);
 }
 
