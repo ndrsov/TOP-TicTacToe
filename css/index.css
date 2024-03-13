@@ -144,6 +144,11 @@ body {
   border: 1px solid transparent;
 }
 
+.menu-btn:focus,
+.menu-btn:hover {
+  background-color: rgba(211, 211, 211, 0.05);
+}
+
 .items {
   position: absolute;
   z-index: 10;
@@ -153,10 +158,17 @@ body {
   border-radius: 2px;
   padding: 10px;
 }
+
 .items button {
   background-color: transparent;
   padding: 8px;
-  color: #fff;
+  color: white;
+  border: none;
+}
+
+.items button:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .square {
