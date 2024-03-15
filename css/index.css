@@ -200,6 +200,8 @@ button:hover {
   cursor: pointer;
 }
 
+/* Squares  */
+
 .square {
   background-color: var(--gray);
 }
