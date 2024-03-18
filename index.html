@@ -41,10 +41,19 @@
         <div class="square shadow"></div>
         <div class="square shadow"></div>
 
-        <!-- Score section -->
-        <div class="score"></div>
-        <div class="score"></div>
-        <div class="score"></div>
+        <!-- Scoreboard -->
+        <div class="score shadow" style="background-color: var(--turquoise)">
+          <p id="p1Name">Player 1</p>
+          <span data-id="p1-wins">0 Wins</span>
+        </div>
+        <div class="score shadow" style="background-color: var(--light-gray)">
+          <p>Ties</p>
+          <span data-id="ties">0</span>
+        </div>
+        <div class="score shadow" style="background-color: var(--yellow)">
+          <p id="p2Name">Player 2</p>
+          <span data-id="p2-wins">0 Wins</span>
+        </div>
       </div>
     </main>
     <footer>
