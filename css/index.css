@@ -216,8 +216,25 @@ button:hover {
   opacity: 90%;
 }
 
+/* Scoreboard  */
+
 .score {
-  background-color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.score p {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.score span {
+  font-size: 0.75rem;
+  margin-top: 2px;
 }
 
 /* Footer  */
