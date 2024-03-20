@@ -61,12 +61,16 @@ body {
   align-items: center;
 }
 
-/* Shared utility classes  */
+button {
+  border: none;
+}
 
 button:hover {
   cursor: pointer;
   opacity: 90%;
 }
+
+/* Shared utility classes  */
 
 .hidden {
   display: none !important;
@@ -192,7 +196,6 @@ button:hover {
   background-color: transparent;
   padding: 8px;
   color: white;
-  border: none;
 }
 
 .items button:hover {
@@ -250,4 +253,40 @@ footer p {
 
 footer a {
   color: var(--turquoise);
+}
+
+/* Modal */
+
+.modal {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-contents {
+  transform: translateY(-80px);
+  height: 150px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #2a4544;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: #fff;
+  margin: 10px;
+}
+
+.modal-contents button {
+  padding: 10px;
+  background-color: var(--turquoise);
+  color: #2a4544;
+  border-radius: 3px;
+  font-weight: 600;
 }
