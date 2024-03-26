@@ -12,4 +12,4 @@ const App = {
   },
 };
 
-App.init();
+window.addEventListener('load', App.init);
