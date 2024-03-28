@@ -11,6 +11,14 @@ const App = {
     App.$.menu.addEventListener('click', () => {
       App.$.menuItems.classList.toggle('hidden');
     });
+
+    App.$.resetBtn.addEventListener('click', () => {
+      console.log('Reset the game');
+    });
+
+    App.$.newRoundBtn.addEventListener('click', () => {
+      console.log('Add a new round');
+    });
   },
 };
 
