@@ -1,5 +1,5 @@
 const App = {
-  // All elected HTML Elements
+  // All selected HTML Elements
   $: {
     menu: document.querySelector('[data-id="menu"]'),
     menuItems: document.querySelector('[data-id="menu-items"]'),
@@ -7,6 +7,7 @@ const App = {
     newRoundBtn: document.querySelector('[data-id="new-round-btn"]'),
   },
 
+  // Main initialization
   init() {
     App.$.menu.addEventListener('click', () => {
       App.$.menuItems.classList.toggle('hidden');
