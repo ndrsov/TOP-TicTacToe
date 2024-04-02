@@ -5,6 +5,7 @@ const App = {
     menuItems: document.querySelector('[data-id="menu-items"]'),
     resetBtn: document.querySelector('[data-id="reset-btn"]'),
     newRoundBtn: document.querySelector('[data-id="new-round-btn"]'),
+    squares: document.querySelectorAll('[data-id="square"]'),
   },
 
   // Main initialization
