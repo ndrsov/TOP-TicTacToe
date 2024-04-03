@@ -21,6 +21,12 @@ const App = {
     App.$.newRoundBtn.addEventListener('click', () => {
       console.log('Add a new round');
     });
+
+    App.$.squares.forEach((square) => {
+      square.addEventListener('click', (e) => {
+        console.log(`Square with id ${e.target.id} was clicked`);
+      });
+    });
   },
 };
 
