@@ -12,6 +12,7 @@ const App = {
   init() {
     App.registerEventListener();
   },
+
   registerEventListener() {
     App.$.menu.addEventListener('click', () => {
       App.$.menuItems.classList.toggle('hidden');
@@ -28,6 +29,11 @@ const App = {
     App.$.squares.forEach((square) => {
       square.addEventListener('click', (e) => {
         console.log(`Square with id ${e.target.id} was clicked`);
+
+        const icon = document.createElement('i');
+        icon.classList.add('fa-solid', 'fa-x', 'yellow');
+
+        e.target.replaceChildren(icon);
       });
     });
   },
