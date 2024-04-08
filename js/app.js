@@ -8,11 +8,17 @@ const App = {
     squares: document.querySelectorAll('[data-id="square"]'),
   },
 
+  // Local state
+  state: {
+    currentPlayer: 1,
+  },
+
   // Main initialization
   init() {
     App.registerEventListener();
   },
 
+  //Main event listener
   registerEventListener() {
     App.$.menu.addEventListener('click', () => {
       App.$.menuItems.classList.toggle('hidden');
