@@ -36,7 +36,7 @@ const App = {
       square.addEventListener('click', (e) => {
         console.log(`Square with id ${e.target.id} was clicked`);
 
-        const currentPlayer = App.$.state.currentPlayer;
+        const currentPlayer = App.state.currentPlayer;
         const icon = document.createElement('i');
 
         if (currentPlayer === 1) {
@@ -45,7 +45,7 @@ const App = {
           icon.classList.add('fa-solid', 'fa-0', 'turquoise');
         }
 
-        App.$.state.currentPlayer = App.$.state.currentPlayer === 1 ? 2 : 1;
+        App.state.currentPlayer = App.state.currentPlayer === 1 ? 2 : 1;
         e.target.replaceChildren(icon);
       });
     });
