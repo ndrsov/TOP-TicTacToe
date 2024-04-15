@@ -34,8 +34,6 @@ const App = {
 
     App.$.squares.forEach((square) => {
       square.addEventListener('click', (e) => {
-        console.log(`Square with id ${e.target.id} was clicked`);
-
         if (square.hasChildNodes()) {
           return;
         }
