@@ -10,7 +10,7 @@ const App = {
 
   // Local state
   state: {
-    currentPlayer: 1,
+    moves: [],
   },
 
   // Main initialization
@@ -39,7 +39,14 @@ const App = {
           return;
         }
 
-        const currentPlayer = App.state.currentPlayer;
+        // Determine which player icond to add to the square
+        const lastMove = App.state.moves.at(-1);
+        const getOppositePlayer = (playerId) => (playerId === 1 ? 2 : 1);
+        const currentPlayer =
+          App.state.moves.length === 0
+            ? 1
+            : getOppositePlayer(lastMove.playerId);
+
         const icon = document.createElement('i');
 
         if (currentPlayer === 1) {
@@ -48,7 +55,15 @@ const App = {
           icon.classList.add('fa-solid', 'fa-0', 'turquoise');
         }
 
-        App.state.currentPlayer = App.state.currentPlayer === 1 ? 2 : 1;
+        App.state.moves.push({
+          squareId: +square.id,
+          playerId: currentPlayer,
+        });
+
+        App.state.currentPlayer = currentPlayer === 1 ? 2 : 1;
+
+        console.log(App.state);
+
         square.replaceChildren(icon);
 
         // Check if there is a winner or tie
