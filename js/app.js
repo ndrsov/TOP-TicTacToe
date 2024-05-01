@@ -35,7 +35,14 @@ const App = {
     App.$.squares.forEach((square) => {
       square.addEventListener('click', (e) => {
         // Check if square has been clicked before
-        if (square.hasChildNodes()) {
+        const hasMove = (squareId) => {
+          const existingMove = App.state.moves.find(
+            (move) => move.squareId === squareId
+          );
+          return existingMove !== undefined;
+        };
+
+        if (hasMove(+square.id)) {
           return;
         }
 
