@@ -29,9 +29,18 @@ const App = {
       [7, 8, 9],
     ];
 
+    let winner = null;
+    winningPatters.forEach((pattern) => {
+      const p1Wins = pattern.every((v) => p1Moves.includes(v));
+      const p2Wins = pattern.every((v) => p2Moves.includes(v));
+
+      if (p1Wins) winner = 1;
+      if (p2Wins) winner = 2;
+    });
+
     return {
-      status: 'in-progres',
-      winner: 1,
+      status: moves.length === 9 || winner != null ? 'complete' : 'in-progress',
+      winner,
     };
   },
 
