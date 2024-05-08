@@ -14,10 +14,13 @@ const App = {
   },
 
   getGameStatus(moves) {
-    const p1Moves = moves.filter((move) => (move.playerId = 1));
-    const p2Moves = moves.filter((move) => (move.playerId = 2));
+    const p1Moves = moves
+      .filter((move) => move.playerId === 1)
+      .map((move) => +move.squareId);
+    const p2Moves = moves
+      .filter((move) => move.playerId === 2)
+      .map((move) => +move.squareId);
 
-    // Check if there is a winner or tie
     const winningPatters = [
       [1, 2, 3],
       [1, 5, 9],
@@ -30,6 +33,7 @@ const App = {
     ];
 
     let winner = null;
+
     winningPatters.forEach((pattern) => {
       const p1Wins = pattern.every((v) => p1Moves.includes(v));
       const p2Wins = pattern.every((v) => p2Moves.includes(v));
@@ -99,6 +103,9 @@ const App = {
         });
 
         square.replaceChildren(icon);
+
+        // Check if there is a winner or tie
+        const status = App.getGameStatus(App.state.moves);
       });
     });
   },
