@@ -105,7 +105,15 @@ const App = {
         square.replaceChildren(icon);
 
         // Check if there is a winner or tie
-        const status = App.getGameStatus(App.state.moves);
+        const game = App.getGameStatus(App.state.moves);
+
+        if (game.status === 'complete') {
+          if (game.winner) {
+            alert(`Player ${game.winner} wins!`);
+          } else {
+            alert('Tie!');
+          }
+        }
       });
     });
   },
