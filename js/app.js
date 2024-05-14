@@ -111,11 +111,16 @@ const App = {
         const game = App.getGameStatus(App.state.moves);
 
         if (game.status === 'complete') {
+          App.$.modal.classList.remove('hidden');
+          let message = '';
+
           if (game.winner) {
-            alert(`Player ${game.winner} wins!`);
+            message = `Player ${game.winner} wins!`;
           } else {
-            alert('Tie!');
+            message = ' Tie game!';
           }
+
+          App.$.modalText.textContent = message;
         }
       });
     });
