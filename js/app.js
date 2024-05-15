@@ -70,6 +70,12 @@ const App = {
       console.log('Add a new round');
     });
 
+    App.$.modalBtn.addEventListener('click', () => {
+      App.state.moves = [];
+      App.$.squares.forEach((square) => square.replaceChildren());
+      App.$.modal.classList.add('hidden');
+    });
+
     App.$.squares.forEach((square) => {
       square.addEventListener('click', (e) => {
         // Check if square has been clicked before
@@ -117,7 +123,7 @@ const App = {
           if (game.winner) {
             message = `Player ${game.winner} wins!`;
           } else {
-            message = ' Tie game!';
+            message = ' Tie!';
           }
 
           App.$.modalText.textContent = message;
