@@ -11,4 +11,18 @@ export default class View {
     this.$.modalBtn = document.querySelector('[data-id="modal-btn"]');
     this.$.turn = document.querySelector('[data-id="turn"]');
   }
+
+  bindGameResetEvent(handler) {
+    this.$.resetBtn.addEventListerner('click', handler);
+  }
+
+  bindNewRoundEvent(handler) {
+    this.$.newRoundBtn.addEventListerner('click', handler);
+  }
+
+  bindPlayerMoveEvent(handler) {
+    this.$.square.forEach((square) => {
+      square.addEventListerner('click', handler);
+    });
+  }
 }
