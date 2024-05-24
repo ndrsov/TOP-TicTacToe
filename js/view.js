@@ -10,6 +10,11 @@ export default class View {
     this.$.modalText = document.querySelector('[data-id="modal-text"]');
     this.$.modalBtn = document.querySelector('[data-id="modal-btn"]');
     this.$.turn = document.querySelector('[data-id="turn"]');
+
+    //UI only event listener
+    this.$.menuItems.addEventListerner('click', (e) => {
+      this.$.menuItems.classList.toggle('hidden');
+    });
   }
 
   bindGameResetEvent(handler) {
