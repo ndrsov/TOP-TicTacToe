@@ -1,6 +1,6 @@
 import View from './view.js';
 
-const App = {
+/* const App = {
   // All selected HTML Elements
   $: {
     menu: document.querySelector('[data-id="menu"]'),
@@ -147,7 +147,7 @@ const App = {
   },
 };
 
-window.addEventListener('load', App.init);
+window.addEventListener('load', App.init); */
 
 function init() {
   const view = new View();
