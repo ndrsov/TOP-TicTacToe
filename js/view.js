@@ -19,16 +19,16 @@ export default class View {
   }
 
   bindGameResetEvent(handler) {
-    this.$.resetBtn.addEventListerner('click', handler);
+    this.$.resetBtn.addEventListener('click', handler);
   }
 
   bindNewRoundEvent(handler) {
-    this.$.newRoundBtn.addEventListerner('click', handler);
+    this.$.newRoundBtn.addEventListener('click', handler);
   }
 
   bindPlayerMoveEvent(handler) {
-    this.$.square.forEach((square) => {
-      square.addEventListerner('click', handler);
+    this.$.squares.forEach((square) => {
+      square.addEventListener('click', handler);
     });
   }
 }
