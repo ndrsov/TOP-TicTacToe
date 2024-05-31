@@ -145,9 +145,7 @@ import View from './view.js';
       });
     });
   },
-};
-
-window.addEventListener('load', App.init); */
+};*/
 
 function init() {
   const view = new View();
