@@ -47,4 +47,11 @@ export default class View {
     icon.classList.toggle('fa-chevron-down');
     icon.classList.toggle('fa-chevron-up');
   }
+
+  qs(selector) {
+    const el = documen.querySelector(selector);
+
+    if (!el) throw Error('Could not find elements');
+    return el;
+  }
 }
