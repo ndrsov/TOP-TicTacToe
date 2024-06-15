@@ -1,16 +1,16 @@
 export default class View {
   $ = {};
   constructor() {
-    this.$.menu = document.querySelector('[data-id="menu"]');
-    this.$.menuItems = document.querySelector('[data-id="menu-items"]');
-    this.$.menuBtn = document.querySelector('[data-id="menu-button"');
-    this.$.resetBtn = document.querySelector('[data-id="reset-btn"]');
-    this.$.newRoundBtn = document.querySelector('[data-id="new-round-btn"]');
+    this.$.menu = this.qs('[data-id="menu"]');
+    this.$.menuItems = this.qs('[data-id="menu-items"]');
+    this.$.menuBtn = this.qs('[data-id="menu-button"');
+    this.$.resetBtn = this.qs('[data-id="reset-btn"]');
+    this.$.newRoundBtn = this.qs('[data-id="new-round-btn"]');
     this.$.squares = document.querySelectorAll('[data-id="square"]');
-    this.$.modal = document.querySelector('[data-id="modal"]');
-    this.$.modalText = document.querySelector('[data-id="modal-text"]');
-    this.$.modalBtn = document.querySelector('[data-id="modal-btn"]');
-    this.$.turn = document.querySelector('[data-id="turn"]');
+    this.$.modal = this.qs('[data-id="modal"]');
+    this.$.modalText = this.qs('[data-id="modal-text"]');
+    this.$.modalBtn = this.qs('[data-id="modal-btn"]');
+    this.$.turn = this.qs('[data-id="turn"]');
 
     //UI only event listener
     this.$.menuBtn.addEventListener('click', () => {
@@ -49,9 +49,10 @@ export default class View {
   }
 
   qs(selector) {
-    const el = documen.querySelector(selector);
+    const el = document.querySelector(selector);
 
     if (!el) throw Error('Could not find elements');
+
     return el;
   }
 }
