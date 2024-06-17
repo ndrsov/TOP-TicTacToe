@@ -6,7 +6,7 @@ export default class View {
     this.$.menuBtn = this.#qs('[data-id="menu-button"');
     this.$.resetBtn = this.#qs('[data-id="reset-btn"]');
     this.$.newRoundBtn = this.#qs('[data-id="new-round-btn"]');
-    this.$.squares = document.querySelectorAll('[data-id="square"]');
+    this.$.squares = this.#qsAll('[data-id="square"]');
     this.$.modal = this.#qs('[data-id="modal"]');
     this.$.modalText = this.#qs('[data-id="modal-text"]');
     this.$.modalBtn = this.#qs('[data-id="modal-btn"]');
@@ -48,11 +48,21 @@ export default class View {
     icon.classList.toggle('fa-chevron-up');
   }
 
-  #qs(selector) {
-    const el = document.querySelector(selector);
+  #qs(selector, parent) {
+    const el = parent
+      ? parent.querySelector(selector)
+      : document.querySelector(selector);
 
     if (!el) throw Error('Could not find elements');
 
     return el;
+  }
+
+  #qsAll(selector) {
+    const elList = document.querySelectorAll(selector);
+
+    if (!elList) throw Error('Could not find elements');
+
+    return elList;
   }
 }
