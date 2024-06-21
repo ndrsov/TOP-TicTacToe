@@ -51,6 +51,13 @@ export default class View {
     icon.classList.toggle('fa-chevron-up');
   }
 
+  #setTurnIndicator(player) {
+    const icon = document.createElement('i');
+    const label = document.createElement('p');
+
+    icon.classList.add(player === 1 ? 'fa-x' : 'fa-o');
+  }
+
   #qs(selector, parent) {
     const el = parent
       ? parent.querySelector(selector)
