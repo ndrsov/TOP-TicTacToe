@@ -159,8 +159,7 @@ function init() {
     console.log(event);
   });
   view.bindPlayerMoveEvent((event) => {
-    console.log('Move event');
-    console.log(event);
+    view.setTurnIndicator(2);
   });
 
   console.log(view.$.turn);

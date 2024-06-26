@@ -51,16 +51,16 @@ export default class View {
     icon.classList.toggle('fa-chevron-up');
   }
 
-  #setTurnIndicator(player) {
+  setTurnIndicator(player) {
     const icon = document.createElement('i');
     const label = document.createElement('p');
 
     this.$.turn.classList.add(player === 1 ? 'yellow' : 'turquoise');
     this.$.turn.classList.remove(player === 1 ? 'turquoise' : 'yellow');
 
-    icon.classList.add(player === 1 ? 'fa-x' : 'fa-o');
+    icon.classList.add('fa-solid', player === 1 ? 'fa-x' : 'fa-o');
 
-    label.innertext =
+    label.innerText =
       player === 1 ? "Player 1, you're up!" : "Player 2, you're up!";
 
     this.$.turn.replaceChildren(icon, label);
