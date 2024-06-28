@@ -51,6 +51,8 @@ export default class View {
     icon.classList.toggle('fa-chevron-up');
   }
 
+  handlePlayerMove() {}
+
   setTurnIndicator(player) {
     const icon = document.createElement('i');
     const label = document.createElement('p');
