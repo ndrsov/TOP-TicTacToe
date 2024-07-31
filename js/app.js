@@ -149,8 +149,8 @@ import View from './view.js';
 };*/
 
 const players = [
-  { id: 1, name: 'Player 1', iconClass: 'fa-x', colorClass: 'turquoise' },
-  { id: 2, name: 'Player 2', iconClass: 'fa-o', colorClass: 'yellow' },
+  { id: 1, name: 'Player 1', iconClass: 'fa-x', colorClass: 'yellow' },
+  { id: 2, name: 'Player 2', iconClass: 'fa-o', colorClass: 'turquoise' },
 ];
 
 function init() {
@@ -168,8 +168,8 @@ function init() {
     console.log(event);
   });
   view.bindPlayerMoveEvent((event) => {
-    view.setTurnIndicator(2);
-    view.handlePlayerMove(event.target, 1);
+    view.setTurnIndicator(players[1]);
+    view.handlePlayerMove(event.target, players[1]);
   });
 
   console.log(view.$.turn);
