@@ -168,8 +168,13 @@ function init() {
     console.log(event);
   });
   view.bindPlayerMoveEvent((event) => {
-    view.setTurnIndicator(players[1]);
-    view.handlePlayerMove(event.target, players[1]);
+    const clickedSquare = event.target;
+
+    view.handlePlayerMove(clickedSquare, store.game.currentPlayer);
+
+    store.playerMove(+clickedSquare.id);
+
+    view.setTurnIndicator(store.game.currentPlayer);
   });
 
   console.log(view.$.turn);
