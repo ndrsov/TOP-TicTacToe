@@ -14,7 +14,7 @@ export default class Store {
 
     const currentPlayer = this.players[state.moves.length % 2];
 
-    return { currentPlayer };
+    return { moves: state.moves, currentPlayer };
   }
 
   playerMove(squareId) {

@@ -167,12 +167,19 @@ function init() {
     console.log('New round event');
     console.log(event);
   });
-  view.bindPlayerMoveEvent((event) => {
-    const clickedSquare = event.target;
+  view.bindPlayerMoveEvent((square) => {
+    //Check if squre clicked has already been clicked before
+    const existingMove = store.game.moves.find(
+      (move) => move.squareId === +square.id
+    );
 
-    view.handlePlayerMove(clickedSquare, store.game.currentPlayer);
+    if (existingMove) {
+      return;
+    }
 
-    store.playerMove(+clickedSquare.id);
+    view.handlePlayerMove(square, store.game.currentPlayer);
+
+    store.playerMove(+square.id);
 
     view.setTurnIndicator(store.game.currentPlayer);
   });
