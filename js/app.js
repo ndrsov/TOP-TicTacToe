@@ -177,10 +177,13 @@ function init() {
       return;
     }
 
+    // Place correct icon on square clicked
     view.handlePlayerMove(square, store.game.currentPlayer);
 
+    // Update state with latest move from player
     store.playerMove(+square.id);
 
+    // Update turn indicator
     view.setTurnIndicator(store.game.currentPlayer);
   });
 
