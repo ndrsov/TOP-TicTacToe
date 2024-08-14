@@ -183,6 +183,12 @@ function init() {
     // Update state with latest move from player
     store.playerMove(+square.id);
 
+    // Check if there is a winner
+    if (store.game.status.isComplete) {
+      view.openModal();
+      return;
+    }
+
     // Update turn indicator
     view.setTurnIndicator(store.game.currentPlayer);
   });
