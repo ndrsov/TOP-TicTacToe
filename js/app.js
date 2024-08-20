@@ -185,7 +185,11 @@ function init() {
 
     // Check if there is a winner
     if (store.game.status.isComplete) {
-      view.openModal();
+      view.openModal(
+        store.game.status.winner
+          ? `${store.game.status.winner.name} wins!`
+          : 'Tie!'
+      );
       return;
     }
 
