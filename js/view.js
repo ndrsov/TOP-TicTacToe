@@ -27,6 +27,7 @@ export default class View {
 
   bindGameResetEvent(handler) {
     this.$.resetBtn.addEventListener('click', handler);
+    this.$.modalBtn.addEventListener('click', handler);
   }
 
   bindNewRoundEvent(handler) {
