@@ -196,8 +196,6 @@ function init() {
     // Update turn indicator
     view.setTurnIndicator(store.game.currentPlayer);
   });
-
-  console.log(view.$.turn);
 }
 
 window.addEventListener('load', init);
