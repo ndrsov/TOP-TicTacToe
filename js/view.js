@@ -49,6 +49,10 @@ export default class View {
     this.$.modalText.innerText = message;
   }
 
+  closeModal() {
+    this.$.modal.classList.add('hidden');
+  }
+
   #toggleMenu() {
     this.$.menuItems.classList.toggle('hidden');
     this.$.menuBtn.classList.toggle('border');
