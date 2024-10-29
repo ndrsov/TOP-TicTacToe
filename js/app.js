@@ -157,8 +157,6 @@ function init() {
   const view = new View();
   const store = new Store(players);
 
-  console.log(store.game);
-
   view.bindGameResetEvent((event) => {
     view.closeModal();
     store.reset();
