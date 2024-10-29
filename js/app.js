@@ -160,9 +160,12 @@ function init() {
   console.log(store.game);
 
   view.bindGameResetEvent((event) => {
-    console.log('Reset event');
-    console.log(event);
+    view.closeModal();
+    store.reset();
+    view.clearMoves();
+    view.setTurnIndicator(store.game.currentPlayer);
   });
+
   view.bindNewRoundEvent((event) => {
     console.log('New round event');
     console.log(event);
