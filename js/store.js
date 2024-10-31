@@ -54,9 +54,7 @@ export default class Store {
   }
 
   playerMove(squareId) {
-    const state = this.#getState();
-
-    const stateClone = structuredClone(state);
+    const stateClone = structuredClone(this.#getState());
 
     stateClone.currentGameMoves.push({
       squareId,
@@ -67,7 +65,18 @@ export default class Store {
   }
 
   reset() {
-    this.#saveState(initialValue);
+    const stateClone = structuredClone(this.#getState());
+    const { status, moves } = this.game;
+
+    if (status.isComplete) {
+      stateClone.history.currentRoundGames.push({
+        moves,
+        status,
+      });
+    }
+
+    stateClone.currentGameMoves = [];
+    this.#saveState(stateClone);
   }
 
   #getState() {
