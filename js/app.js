@@ -22,6 +22,11 @@ function init() {
     view.initializeMoves(store.game.moves);
   }
 
+  window.addEventListener('storage', () => {
+    // Update game in case of game played in another tab
+    initView();
+  });
+
   initView();
 
   view.bindGameResetEvent((event) => {
