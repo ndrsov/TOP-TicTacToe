@@ -16,6 +16,25 @@
   <body>
     <main>
       <div class="grid">
+        <!-- Round number and game length section  -->
+        <div class="round-selector shadow">
+          <div class="round">
+            <p>Round <span data-id="round-number">1</span></p>
+          </div>
+          <div class="game-selector">
+            <p>Games:</p>
+            <div class="game-options">
+              <button data-id="games-3" ="games-btn">3</button>
+              <button data-id="games-5" ="games-btn">5</button>
+              <button data-id="games-7" ="games-btn">7</button>
+              <button data-id="games-infinity" class="games-btn">
+                <i class="fa-solid fa-infinity"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Turn and actions section -->
         <div class="turn" data-id="turn">
           <i class="fa-solid fa-x yellow"></i>
           <p class="yellow">Player 1, you're up</p>
