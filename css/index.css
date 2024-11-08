@@ -98,7 +98,7 @@ button:hover {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 80px);
-  grid-template-rows: 50px repeat(3, 80px) 60px;
+  grid-template-rows: 50px 50px repeat(3, 80px) 60px;
   gap: 5px;
 }
 
@@ -106,12 +106,27 @@ button:hover {
   .grid {
     width: 490px;
     grid-template-columns: repeat(3, 150px);
-    grid-template-rows: 50px repeat(3, 150px) 60px;
+    grid-template-rows: 50px 50px repeat(3, 150px) 60px;
     gap: 20px;
   }
 }
 
 /* Main elements  */
+
+/* round indicator and game length */
+.round-turn-container {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.round-turn- {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /* Turn section  */
 
@@ -156,6 +171,48 @@ button:hover {
     opacity: 100%;
     transform: translateX(0);
   }
+}
+
+/* Game selector and menu options */
+
+.game-selector-menu-container {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.game-options {
+  display: flex;
+  gap: 5px;
+}
+
+.games-btn {
+  background-color: #203139;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.3s;
+}
+
+.games-btn:hover,
+.games-btn.active {
+  background-color: var(--turquoise);
+}
+
+.games-btn .fa-infinity {
+  font-size: 1.1rem;
 }
 
 /* Menu section  */
