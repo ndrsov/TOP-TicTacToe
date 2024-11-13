@@ -208,8 +208,11 @@ button:hover {
   transition: background-color 0.3s;
 }
 
-.games-btn:hover,
 .games-btn.active {
+  background-color: var(--gray);
+}
+
+.games-btn:hover {
   background-color: var(--turquoise);
 }
 
