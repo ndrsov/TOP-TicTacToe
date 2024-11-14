@@ -95,6 +95,7 @@ button:hover {
 
 /* Grid  */
 
+/* Mobile grid  */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 80px);
@@ -102,6 +103,7 @@ button:hover {
   gap: 5px;
 }
 
+/* Desktop grid  */
 @media (min-width: 768px) {
   .grid {
     width: 490px;
