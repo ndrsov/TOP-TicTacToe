@@ -6,8 +6,8 @@ export default class View {
     this.$.menu = this.#qs('[data-id="menu"]');
     this.$.menuItems = this.#qs('[data-id="menu-items"]');
     this.$.menuBtn = this.#qs('[data-id="menu-button"');
-    this.$.resetBtn = this.#qs('[data-id="reset-btn"]');
     this.$.newRoundBtn = this.#qs('[data-id="new-round-btn"]');
+    this.$.resetGameBtn = this.#qs('[data-id="reset-game-btn"]');
     this.$.modal = this.#qs('[data-id="modal"]');
     this.$.modalText = this.#qs('[data-id="modal-text"]');
     this.$.modalBtn = this.#qs('[data-id="modal-btn"]');
@@ -33,13 +33,13 @@ export default class View {
    * Register all the event listeners
    */
 
-  bindGameResetEvent(handler) {
-    this.$.resetBtn.addEventListener('click', handler);
+  bindNewRoundEvent(handler) {
+    this.$.newRoundBtn.addEventListener('click', handler);
     this.$.modalBtn.addEventListener('click', handler);
   }
 
-  bindNewRoundEvent(handler) {
-    this.$.newRoundBtn.addEventListener('click', handler);
+  bindGameResetEvent(handler) {
+    this.$.resetGameBtn.addEventListener('click', handler);
   }
 
   bindPlayerMoveEvent(handler) {

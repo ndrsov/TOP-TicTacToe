@@ -82,7 +82,7 @@ export default class Store {
     this.#saveState(stateClone);
   }
 
-  reset() {
+  newRound() {
     const stateClone = structuredClone(this.#getState());
     const { status, moves } = this.game;
 
@@ -97,8 +97,8 @@ export default class Store {
     this.#saveState(stateClone);
   }
 
-  newRound() {
-    this.reset();
+  gameReset() {
+    this.newRound();
     const stateClone = structuredClone(this.#getState());
     stateClone.history.allGames.push(...stateClone.history.currentRoundGames);
     stateClone.history.currentRoundGames = [];

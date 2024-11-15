@@ -30,7 +30,7 @@ function init() {
   initView();
 
   view.bindGameResetEvent((event) => {
-    store.reset();
+    store.gameReset();
     initView();
   });
 
