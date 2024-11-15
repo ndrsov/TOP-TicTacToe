@@ -15,6 +15,11 @@ export default class View {
     this.$.p1Wins = this.#qs('[data-id="p1-wins"]');
     this.$.p2Wins = this.#qs('[data-id="p2-wins"]');
     this.$.ties = this.#qs('[data-id="ties"]');
+    this.$.roundCounter = this.#qs('[data-id="round-number"]');
+    this.$.winWith3 = this.#qs('[data-id="games-3"]');
+    this.$.winWith5 = this.#qs('[data-id="games-5"]');
+    this.$.winWith7 = this.#qs('[data-id="games-7"]');
+    this.$.winWithInfinity = this.#qs('[data-id="games-infinity"]');
 
     this.$$.squares = this.#qsAll('[data-id="square"]');
 
