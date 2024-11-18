@@ -4,6 +4,7 @@ const initialValue = {
     currentRoundGames: [],
     allGames: [],
   },
+  rounds: 1,
 };
 
 export default class Store {
@@ -94,6 +95,7 @@ export default class Store {
     }
 
     stateClone.currentGameMoves = [];
+    stateClone.rounds++;
     this.#saveState(stateClone);
   }
 
@@ -102,8 +104,14 @@ export default class Store {
     const stateClone = structuredClone(this.#getState());
     stateClone.history.allGames.push(...stateClone.history.currentRoundGames);
     stateClone.history.currentRoundGames = [];
+    stateClone.rounds = 1;
 
     this.#saveState(stateClone);
+  }
+
+  get roundCounter() {
+    const state = this.#getState();
+    return state.rounds || 1;
   }
 
   #getState() {
