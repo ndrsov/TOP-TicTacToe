@@ -20,6 +20,7 @@ function init() {
       store.stats.ties
     );
     view.initializeMoves(store.game.moves);
+    view.updateRoundCounter(store.roundCounter);
   }
 
   window.addEventListener('storage', () => {

@@ -58,6 +58,10 @@ export default class View {
     this.$.ties.innerText = `${ties}`;
   }
 
+  updateRoundCounter(round) {
+    this.$.roundCounter.innerText = round;
+  }
+
   openModal(message) {
     this.$.modal.classList.remove('hidden');
     this.$.modalText.innerText = message;
