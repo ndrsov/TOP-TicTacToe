@@ -27,6 +27,20 @@ export default class View {
     this.$.menuBtn.addEventListener('click', () => {
       this.#toggleMenu();
     });
+
+    [
+      this.$.winWith3,
+      this.$.winWith5,
+      this.$.winWith7,
+      this.$.winWithInfinity,
+    ].forEach((element) => {
+      element.addEventListener('click', () => {
+        this.toggleActiveGameOption(element);
+      });
+    });
+
+    // Setting the game options for 3 wins as the default
+    this.toggleActiveGameOption(this.winWith3);
   }
 
   /**
@@ -60,6 +74,10 @@ export default class View {
 
   updateRoundCounter(round) {
     this.$.roundCounter.innerText = round;
+  }
+
+  toggleActiveGameOption(element) {
+    console.log('button preseed', element);
   }
 
   openModal(message) {
