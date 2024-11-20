@@ -40,7 +40,7 @@ export default class View {
     });
 
     // Setting the game options for 3 wins as the default
-    this.toggleActiveGameOption(this.winWith3);
+    this.toggleActiveGameOption(this.$.winWith3);
   }
 
   /**
@@ -77,7 +77,13 @@ export default class View {
   }
 
   toggleActiveGameOption(element) {
-    console.log('button preseed', element);
+    [
+      this.$.winWith3,
+      this.$.winWith5,
+      this.$.winWith7,
+      this.$.winWithInfinity,
+    ].forEach((el) => el.classList.remove('active'));
+    element.classList.add('active');
   }
 
   openModal(message) {

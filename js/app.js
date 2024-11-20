@@ -32,6 +32,7 @@ function init() {
 
   view.bindGameResetEvent((event) => {
     store.gameReset();
+    view.toggleActiveGameOption(view.$.winWith3);
     initView();
   });
 
