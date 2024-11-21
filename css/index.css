@@ -212,6 +212,7 @@ button:hover {
 
 .games-btn.active {
   background-color: var(--gray);
+  border: 1px solid var(--light-gray);
 }
 
 .games-btn:hover {
