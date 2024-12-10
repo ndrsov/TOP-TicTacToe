@@ -23,6 +23,17 @@ function init() {
     view.updateRoundCounter(store.roundCounter);
   }
 
+  view.bindGameOptionChange((length) => {
+    store.setGameLength(length);
+    view.toggleActiveGameOption(
+      document.querySelector(
+        `[data-id="games-${length === Infinity ? 'infinity' : length}"]`
+      )
+    );
+    store.gameReset();
+    initView();
+  });
+
   window.addEventListener('storage', () => {
     // Update game in case of game played in another tab
     initView();
