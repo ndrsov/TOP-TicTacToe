@@ -5,6 +5,7 @@ const initialValue = {
     allGames: [],
   },
   rounds: 1,
+  gameLength: 3,
 };
 
 export default class Store {
@@ -70,6 +71,17 @@ export default class Store {
         winner,
       },
     };
+  }
+
+  get gameLength() {
+    const state = this.#getState();
+    return state.gameLength || 3;
+  }
+
+  setGameLength(length) {
+    const stateClone = structuredClone(this.#getState());
+    stateClone.gameLength = length;
+    this.#saveState(stateClone);
   }
 
   playerMove(squareId) {
