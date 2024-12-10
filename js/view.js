@@ -62,6 +62,23 @@ export default class View {
     });
   }
 
+  bindGameOptionChange(handler) {
+    [
+      this.$.winWith3,
+      this.$.winWith5,
+      this.$.winWith7,
+      this.$.winWithInfinity,
+    ].forEach((button) => {
+      button.addEventListener('click', () => {
+        const length =
+          button.dataset.id === 'games-infinity'
+            ? Infinity
+            : parseInt(button.innerText, 10);
+        handler(length);
+      });
+    });
+  }
+
   /**
    * DOM helper methods
    */
