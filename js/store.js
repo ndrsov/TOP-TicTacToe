@@ -17,19 +17,21 @@ export default class Store {
   get stats() {
     const state = this.#getState();
 
+    const playerWithStats = this.players.map((player) => {
+      const wins = state.history.currentRoundGames.filter(
+        (game) => game.status.winner?.id === player.id
+      ).length;
+      return { ...player, wins };
+    });
+
     return {
-      playerWithStats: this.players.map((player) => {
-        const wins = state.history.currentRoundGames.filter(
-          (game) => game.status.winner?.id === player.id
-        ).length;
-        return {
-          ...player,
-          wins,
-        };
-      }),
+      playerWithStats,
       ties: state.history.currentRoundGames.filter(
         (game) => game.status.winner === null
       ).length,
+      isGameComplete: playerWithStats.some(
+        (player) => player.wins >= this.gameLength
+      ),
     };
   }
 
