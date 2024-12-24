@@ -52,6 +52,13 @@ export default class View {
     this.$.modalBtn.addEventListener('click', handler);
   }
 
+  bindModalevent(handler) {
+    this.$.modalBtn.addEventListener('click', (event) => {
+      const action = event.target.dataset.action;
+      handler(action);
+    });
+  }
+
   bindGameResetEvent(handler) {
     this.$.resetGameBtn.addEventListener('click', handler);
   }
@@ -106,6 +113,15 @@ export default class View {
   openModal(message) {
     this.$.modal.classList.remove('hidden');
     this.$.modalText.innerText = message;
+  }
+
+  showGameOverModal(winnerName) {
+    this.$.modal.classList.remove('hidden');
+    this.$.modalText.innerText = `${winnerName} wins the game!`;
+
+    // Update modal button to reset game
+    this.$.modalBtn.innerText = 'New Game';
+    this.$.modalBtn.dataset.action = 'reset-game';
   }
 
   closeAll() {
