@@ -52,7 +52,7 @@ export default class View {
     this.$.modalBtn.addEventListener('click', handler);
   }
 
-  bindModalevent(handler) {
+  bindModalEvent(handler) {
     this.$.modalBtn.addEventListener('click', (event) => {
       const action = event.target.dataset.action;
       handler(action);
