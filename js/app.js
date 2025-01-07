@@ -34,6 +34,16 @@ function init() {
     initView();
   });
 
+  view.bindModalEvent((action) => {
+    if (action === 'reset-game') {
+      store.gameReset();
+      initView();
+    } else if (action === 'next-round') {
+      store.newRound();
+      initView();
+    }
+  });
+
   window.addEventListener('storage', () => {
     // Update game in case of game played in another tab
     initView();
@@ -70,11 +80,18 @@ function init() {
 
     // Check if there is a winner
     if (store.game.status.isComplete) {
-      view.openModal(
-        store.game.status.winner
-          ? `${store.game.status.winner.name} wins!`
-          : 'Tie!'
-      );
+      if (store.stats.isGameComplete) {
+        const winner = store.stats.playerWithStats.find(
+          (player) => player.wins >= store.gameLength
+        );
+        view.showGameOverModal(winner.name); // Display the new modal for the game winner
+      } else {
+        view.openModal(
+          store.game.status.winner
+            ? `${store.game.status.winner.name} wins!`
+            : 'Tie!'
+        );
+      }
       return;
     }
 
